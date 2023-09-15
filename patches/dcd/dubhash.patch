@@ -1,0 +1,77 @@
+diff --git a/common/dub.sdl b/common/dub.sdl
+index 57b7c42..a995488 100644
+--- a/common/dub.sdl
++++ b/common/dub.sdl
+@@ -1,6 +1,4 @@
+ name "common"
+-stringImportPaths "../bin"
+-preBuildCommands "\"$DC\" -run \"$PACKAGE_DIR/dubhash.d\""
+ 
+ sourcePaths "src"
+ importPaths "src"
+diff --git a/common/dubhash.d b/common/dubhash.d
+deleted file mode 100644
+index 1c03b07..0000000
+--- a/common/dubhash.d
++++ /dev/null
+@@ -1,23 +0,0 @@
+-import std.algorithm;
+-import std.ascii;
+-import std.conv;
+-import std.exception;
+-import std.file;
+-import std.path;
+-import std.process;
+-import std.range;
+-import std.string;
+-
+-void main()
+-{
+-    auto dir = environment.get("DUB_PACKAGE_DIR");
+-    auto hashFile = dir.buildPath("..", "bin", "dubhash.txt");
+-    auto gitVer = executeShell("git -C " ~ dir ~ " describe --tags");
+-    auto ver = (gitVer.status == 0 ? gitVer.output.strip
+-            : "v" ~ dir.dirName.baseName.findSplitAfter(
+-                environment.get("DUB_ROOT_PACKAGE") ~ "-")[1]).ifThrown("0.0.0")
+-        .chain(newline).to!string.strip;
+-    dir.buildPath("..", "bin").mkdirRecurse;
+-    if (!hashFile.exists || ver != hashFile.readText.strip)
+-        hashFile.write(ver);
+-}
+diff --git a/common/src/dcd/common/dcd_version.d b/common/src/dcd/common/dcd_version.d
+index 2d4cccb..f06c68b 100644
+--- a/common/src/dcd/common/dcd_version.d
++++ b/common/src/dcd/common/dcd_version.d
+@@ -24,14 +24,4 @@ import std.string : strip;
+  * Human-readable version number
+  */
+ 
+-version (built_with_dub)
+-{
+-	enum DCD_VERSION = import("dubhash.txt").strip;
+-}
+-else
+-{
+-	/**
+-	 * Current build's Git commit hash
+-	 */
+-	enum DCD_VERSION = import("githash.txt").strip;
+-}
++enum DCD_VERSION = "Nix";
+diff --git a/makefile b/makefile
+index 74c0b57..657e0d4 100644
+--- a/makefile
++++ b/makefile
+@@ -130,10 +130,10 @@ gdcserver: githash
+ 	mkdir -p bin
+ 	${GDC} ${SERVER_SRC} ${GDC_SERVER_FLAGS}
+ 
+-ldcclient: githash
++ldcclient:
+ 	${LDC} ${CLIENT_SRC} ${LDC_CLIENT_FLAGS} -oq -of=bin/dcd-client
+ 
+-ldcserver: githash
++ldcserver:
+ 	${LDC} $(LDC_SERVER_FLAGS) ${SERVER_SRC} -oq -of=bin/dcd-server
+ 
+ test: debugserver dmdclient

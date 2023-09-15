@@ -1,0 +1,66 @@
+{
+    "dcd": {
+        "cargoLocks": null,
+        "date": "2023-08-19",
+        "extract": {
+            "dub.selections.json": "./dcd-8a693954d31c09fdfea3887b9bc75a6b66cfe9e7/dub.selections.json"
+        },
+        "name": "dcd",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "dlang-community",
+            "repo": "dcd",
+            "rev": "8a693954d31c09fdfea3887b9bc75a6b66cfe9e7",
+            "sha256": "sha256-IztiRegaLPufB/das7f+i7TlObPHsf8tOUXpFqrMQ8E=",
+            "type": "github"
+        },
+        "version": "8a693954d31c09fdfea3887b9bc75a6b66cfe9e7"
+    },
+    "dfmt": {
+        "cargoLocks": null,
+        "date": "2023-07-26",
+        "extract": null,
+        "name": "dfmt",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "dlang-community",
+            "repo": "dfmt",
+            "rev": "1e765fb7819b58ee4501c51afbac9b1afa44d1e8",
+            "sha256": "sha256-AqyvoTPwmIuBxH+kKXIZcf29kaG5NPurZpszH3DOjR8=",
+            "type": "github"
+        },
+        "version": "1e765fb7819b58ee4501c51afbac9b1afa44d1e8"
+    },
+    "serve-d": {
+        "cargoLocks": null,
+        "date": "2023-09-01",
+        "extract": {
+            "dub.selections.json": "./serve-d-c7ac3314a103c9c92b79b97a5e1556dc299fad23/dub.selections.json"
+        },
+        "name": "serve-d",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Pure-D",
+            "repo": "serve-d",
+            "rev": "c7ac3314a103c9c92b79b97a5e1556dc299fad23",
+            "sha256": "sha256-p8kXQBC8CE7VQFIASOGAH1Y5yGdEWBVHb6l0o3HtGbo=",
+            "type": "github"
+        },
+        "version": "c7ac3314a103c9c92b79b97a5e1556dc299fad23"
+    }
+}
