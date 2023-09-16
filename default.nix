@@ -1,9 +1,6 @@
 {
   pkgs ? import <nixpkgs> {},
-  dcompiler ?
-    if pkgs.stdenv.hostPlatform.system == "aarch64-darwin"
-    then pkgs.ldc
-    else pkgs.dmd,
+  dcompiler ? pkgs.ldc,
   dub2nix ? (fetchTarball "https://github.com/lionello/dub2nix/archive/refs/heads/${(builtins.fromJSON (builtins.readFile ./flake.lock)).nodes.dub2nix.locked.rev}.zip"),
 }: let
   nvfetcher = pkgs.callPackage ./_sources/generated.nix {};
@@ -36,7 +33,7 @@ in {
     '';
   };
 
-  dfmt = mkPkg "dfmt" {};
+  # dfmt = mkPkg "dfmt" {};
 
   serve-d = let
     sources = nvfetcher."serve-d-bin-${pkgs.stdenv.hostPlatform.system}";
