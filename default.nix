@@ -22,7 +22,8 @@ in {
     buildInputs = [dcompiler];
     buildPhase = ''
       runHook preBuild
-      make ldc
+      # what is this ecosystem
+      make SHELL="sh" ldc
       runHook postBuild
     '';
     installPhase = ''
@@ -33,9 +34,9 @@ in {
     '';
   };
 
-  # dfmt = mkPkg "dfmt" {};
+  dfmt = mkPkg "dfmt" {};
 
-  serve-d = let
+  serve-d-bin = let
     sources = nvfetcher."serve-d-bin-${pkgs.stdenv.hostPlatform.system}";
   in
     pkgs.stdenvNoCC.mkDerivation {
