@@ -11,50 +11,19 @@
       systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
       perSystem = {
         pkgs,
-        system,
+        self',
         ...
-      }: let
-        dub2nix = import inputs.dub2nix {inherit pkgs;};
-        dcompiler =
-          if system == "aarch64-darwin"
-          then pkgs.ldc
-          else pkgs.dmd;
-        mkDubDerivation = (import "${inputs.dub2nix}/mkDub.nix" {inherit pkgs dcompiler;}).mkDubDerivation;
-        nvfetcher = pkgs.callPackage ./_sources/generated.nix {};
-      in {
-        packages = let
-          mkPkg = pname: attrs:
-            mkDubDerivation ({
-                inherit (nvfetcher.${pname}) pname version src;
-                selections = ./dub2nix/${pname}.dub.selections.nix;
-              }
-              // attrs);
-        in {
-          containers = mkPkg "containers" {};
-          dcd = pkgs.stdenv.mkDerivation {
-            inherit (nvfetcher.dcd) pname version src;
-            patches = [./patches/dcd/dubhash.patch];
-            buildInputs = [dcompiler];
-            buildPhase = ''
-              runHook preBuild
-              make ldc
-              runHook postBuild
-            '';
-            installPhase = ''
-              runHook preInstall
-              mkdir -p $out/bin
-              cp -r bin/* $out/bin
-              runHook postInstall
-            '';
-          };
-          dfmt = mkPkg "dfmt" {};
-          serve-d = mkPkg "serve-d" {};
+      }: {
+        checks = self'.packages;
+
+        packages = import ./. {
+          inherit pkgs;
+          inherit (inputs) dub2nix;
         };
 
         devShells.default = pkgs.mkShell {
           buildInputs = [
-            pkgs.dub
-            dub2nix
+            (import inputs.dub2nix {inherit pkgs;})
             pkgs.ldc
             pkgs.nvfetcher
           ];
