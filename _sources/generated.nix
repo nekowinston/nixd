@@ -39,4 +39,28 @@
     "dub.selections.json" = builtins.readFile ./serve-d-c7ac3314a103c9c92b79b97a5e1556dc299fad23/dub.selections.json;
     date = "2023-09-01";
   };
+  serve-d-bin-aarch64-darwin = {
+    pname = "serve-d-bin-aarch64-darwin";
+    version = "0.8.0-beta.14";
+    src = fetchurl {
+      url = "https://github.com/Pure-D/serve-d/releases/download/v0.8.0-beta.14/serve-d_0.8.0-beta.14-osx-arm64.tar.xz";
+      sha256 = "sha256-KH61vEqBNX3Ixm5mi+bQ/Qc3KXrPd0DamEmkMxr4BPs=";
+    };
+  };
+  serve-d-bin-x86_64-darwin = {
+    pname = "serve-d-bin-x86_64-darwin";
+    version = "0.8.0-beta.14";
+    src = fetchurl {
+      url = "https://github.com/Pure-D/serve-d/releases/download/v0.8.0-beta.14/serve-d_0.8.0-beta.14-osx-x86_64.tar.xz";
+      sha256 = "sha256-d4SIM4M1QJFUIJRcgALe4Uwr3UAZB7lupq46rCK7RM4=";
+    };
+  };
+  serve-d-bin-x86_64-linux = {
+    pname = "serve-d-bin-x86_64-linux";
+    version = "0.8.0-beta.14";
+    src = fetchurl {
+      url = "https://github.com/Pure-D/serve-d/releases/download/v0.8.0-beta.14/serve-d_0.8.0-beta.14-linux-x86_64.tar.xz";
+      sha256 = "sha256-i5w56gqk+J6N6Iz9gwVvrZ06SH1Th67bQalK/RlxyQs=";
+    };
+  };
 }

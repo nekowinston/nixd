@@ -12,3 +12,18 @@ fetch.github = "dlang-community/dfmt"
 src.git = "https://github.com/Pure-D/serve-d"
 fetch.github = "Pure-D/serve-d"
 extract = ["dub.selections.json"]
+
+[serve-d-bin-aarch64-darwin]
+src.github_tag = "Pure-D/serve-d"
+src.prefix = "v"
+fetch.url = "https://github.com/Pure-D/serve-d/releases/download/v$ver/serve-d_$ver-osx-arm64.tar.xz"
+
+[serve-d-bin-x86_64-darwin]
+src.github_tag = "Pure-D/serve-d"
+src.prefix = "v"
+fetch.url = "https://github.com/Pure-D/serve-d/releases/download/v$ver/serve-d_$ver-osx-x86_64.tar.xz"
+
+[serve-d-bin-x86_64-linux]
+src.github_tag = "Pure-D/serve-d"
+src.prefix = "v"
+fetch.url = "https://github.com/Pure-D/serve-d/releases/download/v$ver/serve-d_$ver-linux-x86_64.tar.xz"

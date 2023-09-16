@@ -34,6 +34,28 @@ in {
 
   dfmt = mkPkg "dfmt" {};
 
-  # FIXME: broken :(
-  # serve-d = mkPkg "serve-d" {};
+  serve-d = let
+    sources = nvfetcher."serve-d-bin-${pkgs.stdenv.hostPlatform.system}";
+  in
+    pkgs.stdenvNoCC.mkDerivation {
+      inherit (sources) pname version src;
+
+      dontConfigure = true;
+      dontBuild = true;
+      unpackPhase = ''
+        runHook preUnpack
+
+        tar xf $src
+
+        runHook postUnpack
+      '';
+      installPhase = ''
+        runHook preInstall
+
+        mkdir -p $out/bin
+        cp serve-d $out/bin
+
+        runHook postInstall
+      '';
+    };
 }

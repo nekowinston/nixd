@@ -62,5 +62,50 @@
             "type": "github"
         },
         "version": "c7ac3314a103c9c92b79b97a5e1556dc299fad23"
+    },
+    "serve-d-bin-aarch64-darwin": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "serve-d-bin-aarch64-darwin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-KH61vEqBNX3Ixm5mi+bQ/Qc3KXrPd0DamEmkMxr4BPs=",
+            "type": "url",
+            "url": "https://github.com/Pure-D/serve-d/releases/download/v0.8.0-beta.14/serve-d_0.8.0-beta.14-osx-arm64.tar.xz"
+        },
+        "version": "0.8.0-beta.14"
+    },
+    "serve-d-bin-x86_64-darwin": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "serve-d-bin-x86_64-darwin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-d4SIM4M1QJFUIJRcgALe4Uwr3UAZB7lupq46rCK7RM4=",
+            "type": "url",
+            "url": "https://github.com/Pure-D/serve-d/releases/download/v0.8.0-beta.14/serve-d_0.8.0-beta.14-osx-x86_64.tar.xz"
+        },
+        "version": "0.8.0-beta.14"
+    },
+    "serve-d-bin-x86_64-linux": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "serve-d-bin-x86_64-linux",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-i5w56gqk+J6N6Iz9gwVvrZ06SH1Th67bQalK/RlxyQs=",
+            "type": "url",
+            "url": "https://github.com/Pure-D/serve-d/releases/download/v0.8.0-beta.14/serve-d_0.8.0-beta.14-linux-x86_64.tar.xz"
+        },
+        "version": "0.8.0-beta.14"
     }
 }
