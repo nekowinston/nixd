@@ -24,10 +24,12 @@
         devShells.default = pkgs.mkShell {
           buildInputs = [
             (import inputs.dub2nix {inherit pkgs;})
-            pkgs.ldc
+            pkgs.just
             pkgs.nvfetcher
           ];
         };
+
+        formatter = pkgs.alejandra;
       };
     };
 }
