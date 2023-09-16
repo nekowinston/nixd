@@ -1,5 +1,5 @@
 [dcd]
-src.git = "https://github.com/dlang-community/dcd"
+src.github_tag = "dlang-community/dcd"
 fetch.github = "dlang-community/dcd"
 git.fetchSubmodules = true
 extract = ["dub.selections.json"]

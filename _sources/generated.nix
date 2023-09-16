@@ -3,16 +3,15 @@
 {
   dcd = {
     pname = "dcd";
-    version = "8a693954d31c09fdfea3887b9bc75a6b66cfe9e7";
+    version = "v0.16.0-beta.2";
     src = fetchFromGitHub {
       owner = "dlang-community";
       repo = "dcd";
-      rev = "8a693954d31c09fdfea3887b9bc75a6b66cfe9e7";
+      rev = "v0.16.0-beta.2";
       fetchSubmodules = true;
-      sha256 = "sha256-IztiRegaLPufB/das7f+i7TlObPHsf8tOUXpFqrMQ8E=";
+      sha256 = "sha256-BWXuk4CYfhU98FeTXa/OeJGBLIdHJKGwedRceOH0Jhc=";
     };
-    "dub.selections.json" = builtins.readFile ./dcd-8a693954d31c09fdfea3887b9bc75a6b66cfe9e7/dub.selections.json;
-    date = "2023-08-19";
+    "dub.selections.json" = builtins.readFile ./dcd-v0.16.0-beta.2/dub.selections.json;
   };
   dfmt = {
     pname = "dfmt";

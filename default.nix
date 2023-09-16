@@ -15,9 +15,13 @@
       }
       // attrs);
 in {
-  dcd = pkgs.stdenv.mkDerivation {
+  dcd = pkgs.stdenv.mkDerivation rec {
     inherit (nvfetcher.dcd) pname version src;
     patches = [./patches/dcd/dubhash.patch];
+    postPatch = ''
+      substituteInPlace common/src/dcd/common/dcd_version.d \
+        --replace '"nix_version"' '"${version}"'
+    '';
     buildInputs = [dcompiler];
     buildPhase = ''
       runHook preBuild

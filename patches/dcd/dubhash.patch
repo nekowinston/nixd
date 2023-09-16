@@ -57,7 +57,7 @@ index 2d4cccb..f06c68b 100644
 -	 */
 -	enum DCD_VERSION = import("githash.txt").strip;
 -}
-+enum DCD_VERSION = "Nix";
++enum DCD_VERSION = "nix_version";
 diff --git a/makefile b/makefile
 index 74c0b57..657e0d4 100644
 --- a/makefile
