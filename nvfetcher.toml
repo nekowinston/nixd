@@ -8,10 +8,10 @@ extract = ["dub.selections.json"]
 src.git = "https://github.com/dlang-community/dfmt"
 fetch.github = "dlang-community/dfmt"
 
-[serve-d]
-src.git = "https://github.com/Pure-D/serve-d"
-fetch.github = "Pure-D/serve-d"
-extract = ["dub.selections.json"]
+# [serve-d]
+# src.git = "https://github.com/Pure-D/serve-d"
+# fetch.github = "Pure-D/serve-d"
+# extract = ["dub.selections.json"]
 
 [serve-d-bin-aarch64-darwin]
 src.github_tag = "Pure-D/serve-d"

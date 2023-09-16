@@ -41,28 +41,6 @@
         },
         "version": "1e765fb7819b58ee4501c51afbac9b1afa44d1e8"
     },
-    "serve-d": {
-        "cargoLocks": null,
-        "date": "2023-09-01",
-        "extract": {
-            "dub.selections.json": "./serve-d-c7ac3314a103c9c92b79b97a5e1556dc299fad23/dub.selections.json"
-        },
-        "name": "serve-d",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "Pure-D",
-            "repo": "serve-d",
-            "rev": "c7ac3314a103c9c92b79b97a5e1556dc299fad23",
-            "sha256": "sha256-p8kXQBC8CE7VQFIASOGAH1Y5yGdEWBVHb6l0o3HtGbo=",
-            "type": "github"
-        },
-        "version": "c7ac3314a103c9c92b79b97a5e1556dc299fad23"
-    },
     "serve-d-bin-aarch64-darwin": {
         "cargoLocks": null,
         "date": null,

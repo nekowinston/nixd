@@ -25,19 +25,6 @@
     };
     date = "2023-07-26";
   };
-  serve-d = {
-    pname = "serve-d";
-    version = "c7ac3314a103c9c92b79b97a5e1556dc299fad23";
-    src = fetchFromGitHub {
-      owner = "Pure-D";
-      repo = "serve-d";
-      rev = "c7ac3314a103c9c92b79b97a5e1556dc299fad23";
-      fetchSubmodules = false;
-      sha256 = "sha256-p8kXQBC8CE7VQFIASOGAH1Y5yGdEWBVHb6l0o3HtGbo=";
-    };
-    "dub.selections.json" = builtins.readFile ./serve-d-c7ac3314a103c9c92b79b97a5e1556dc299fad23/dub.selections.json;
-    date = "2023-09-01";
-  };
   serve-d-bin-aarch64-darwin = {
     pname = "serve-d-bin-aarch64-darwin";
     version = "0.8.0-beta.14";
