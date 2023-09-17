@@ -15,15 +15,14 @@
   };
   dfmt = {
     pname = "dfmt";
-    version = "1e765fb7819b58ee4501c51afbac9b1afa44d1e8";
+    version = "v0.15.1";
     src = fetchFromGitHub {
       owner = "dlang-community";
       repo = "dfmt";
-      rev = "1e765fb7819b58ee4501c51afbac9b1afa44d1e8";
+      rev = "v0.15.1";
       fetchSubmodules = false;
-      sha256 = "sha256-AqyvoTPwmIuBxH+kKXIZcf29kaG5NPurZpszH3DOjR8=";
+      sha256 = "sha256-N2Tf1hydBVZ+TNjUORsBs8s57JFZ5LzOUobxRHkni7o=";
     };
-    date = "2023-07-26";
   };
   serve-d-bin-aarch64-darwin = {
     pname = "serve-d-bin-aarch64-darwin";

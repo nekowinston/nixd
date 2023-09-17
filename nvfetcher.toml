@@ -2,11 +2,12 @@
 src.github_tag = "dlang-community/dcd"
 fetch.github = "dlang-community/dcd"
 git.fetchSubmodules = true
-extract = ["dub.selections.json"]
 
 [dfmt]
-src.git = "https://github.com/dlang-community/dfmt"
+src.github_tag = "dlang-community/dfmt"
 fetch.github = "dlang-community/dfmt"
+# TODO: ask upstream to add their selections
+# extract = ["dub.selections.json"]
 
 # [serve-d]
 # src.git = "https://github.com/Pure-D/serve-d"
