@@ -34,7 +34,7 @@ in {
       runHook preBuild
       # the make step is called dmd/ldc/gdc
       # hoping that pname is a sufficient shortcut
-      make ${dcompiler.pname}
+      make SHELL="sh" ${dcompiler.pname}
       runHook postBuild
     '';
     installPhase = ''
