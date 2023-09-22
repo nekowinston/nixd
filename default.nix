@@ -14,59 +14,19 @@
   mkPkg = pname: attrs:
     mkDubDerivation ({
         inherit (nvfetcher.${pname}) pname version src;
-        selections = ./dub2nix/${pname}.dub.selections.nix;
+        selections = ./pkgs/${pname}/dub.selections.nix;
       }
       // attrs);
-in {
-  dcd = pkgs.stdenv.mkDerivation rec {
-    inherit (nvfetcher.dcd) pname version src;
-
-    # deal with the dubhash, set the dcd_version enum to the nix version
-    patches = [./patches/dcd/dubhash.patch];
-    postPatch = ''
-      substituteInPlace \
-        common/src/dcd/common/dcd_version.d \
-        --replace '"nix_version"' '"${version}"'
-    '';
-
-    buildInputs = [dcompiler];
-    buildPhase = ''
-      runHook preBuild
-      # the make step is called dmd/ldc/gdc
-      # hoping that pname is a sufficient shortcut
-      make SHELL="sh" ${dcompiler.pname}
-      runHook postBuild
-    '';
-    installPhase = ''
-      runHook preInstall
-      mkdir -p $out/bin
-      cp bin/dcd-{client,server} $out/bin
-      runHook postInstall
-    '';
+  system = pkgs.stdenv.hostPlatform.system;
+in rec {
+  dcd = pkgs.callPackage ./pkgs/dcd {
+    inherit dcompiler;
+    source = nvfetcher."dcd";
   };
 
   dfmt = mkPkg "dfmt" {};
 
   # just packaging the binary, since it can't build with dub2nix yet
-  serve-d-bin = let
-    sources = nvfetcher."serve-d-bin-${pkgs.stdenv.hostPlatform.system}";
-  in
-    pkgs.stdenvNoCC.mkDerivation {
-      inherit (sources) pname version src;
-
-      dontConfigure = true;
-      dontBuild = true;
-
-      unpackPhase = ''
-        runHook preUnpack
-        tar xf $src
-        runHook postUnpack
-      '';
-      installPhase = ''
-        runHook preInstall
-        mkdir -p $out/bin
-        cp serve-d $out/bin
-        runHook postInstall
-      '';
-    };
+  serve-d = serve-d-bin;
+  serve-d-bin = pkgs.callPackage ./pkgs/serve-d-bin {source = nvfetcher."serve-d-bin-${system}";};
 }
