@@ -26,6 +26,12 @@ in rec {
 
   dfmt = mkPkg "dfmt" {};
 
+  # TODO: not quite ready yet, another dub2nix issue
+  # dscanner = pkgs.callPackage ./pkgs/dscanner {
+  #   inherit dcompiler mkDubDerivation;
+  #   source = nvfetcher."dscanner";
+  # };
+
   # just packaging the binary, since it can't build with dub2nix yet
   serve-d = serve-d-bin;
   serve-d-bin = pkgs.callPackage ./pkgs/serve-d-bin {source = nvfetcher."serve-d-bin-${system}";};

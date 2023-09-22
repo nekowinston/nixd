@@ -2,9 +2,7 @@
     "dcd": {
         "cargoLocks": null,
         "date": null,
-        "extract": {
-            "dub.selections.json": "./dcd-v0.16.0-beta.2/dub.selections.json"
-        },
+        "extract": null,
         "name": "dcd",
         "passthru": null,
         "pinned": false,
@@ -40,6 +38,28 @@
             "type": "github"
         },
         "version": "v0.15.1"
+    },
+    "dscanner": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": {
+            "dub.selections.json": "./dscanner-v0.16.0-beta.3/dub.selections.json"
+        },
+        "name": "dscanner",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "dlang-community",
+            "repo": "d-scanner",
+            "rev": "v0.16.0-beta.3",
+            "sha256": "sha256-MRcpPOHlnzyn2T2HFgzXWML8s3XJwOe+HggGzYA6Gag=",
+            "type": "github"
+        },
+        "version": "v0.16.0-beta.3"
     },
     "serve-d-bin-aarch64-darwin": {
         "cargoLocks": null,

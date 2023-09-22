@@ -9,6 +9,11 @@ fetch.github = "dlang-community/dfmt"
 # TODO: ask upstream to add their selections
 # extract = ["dub.selections.json"]
 
+[dscanner]
+src.github_tag = "dlang-community/d-scanner"
+fetch.github = "dlang-community/d-scanner"
+extract = ["dub.selections.json"]
+
 # [serve-d]
 # src.git = "https://github.com/Pure-D/serve-d"
 # fetch.github = "Pure-D/serve-d"

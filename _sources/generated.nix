@@ -11,7 +11,6 @@
       fetchSubmodules = true;
       sha256 = "sha256-BWXuk4CYfhU98FeTXa/OeJGBLIdHJKGwedRceOH0Jhc=";
     };
-    "dub.selections.json" = builtins.readFile ./dcd-v0.16.0-beta.2/dub.selections.json;
   };
   dfmt = {
     pname = "dfmt";
@@ -23,6 +22,18 @@
       fetchSubmodules = false;
       sha256 = "sha256-N2Tf1hydBVZ+TNjUORsBs8s57JFZ5LzOUobxRHkni7o=";
     };
+  };
+  dscanner = {
+    pname = "dscanner";
+    version = "v0.16.0-beta.3";
+    src = fetchFromGitHub {
+      owner = "dlang-community";
+      repo = "d-scanner";
+      rev = "v0.16.0-beta.3";
+      fetchSubmodules = false;
+      sha256 = "sha256-MRcpPOHlnzyn2T2HFgzXWML8s3XJwOe+HggGzYA6Gag=";
+    };
+    "dub.selections.json" = builtins.readFile ./dscanner-v0.16.0-beta.3/dub.selections.json;
   };
   serve-d-bin-aarch64-darwin = {
     pname = "serve-d-bin-aarch64-darwin";
