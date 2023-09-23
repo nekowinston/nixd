@@ -61,6 +61,28 @@
         },
         "version": "v0.16.0-beta.3"
     },
+    "serve-d": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": {
+            "dub.selections.json": "./serve-d-v0.8.0-beta.14/dub.selections.json"
+        },
+        "name": "serve-d",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "pure-d",
+            "repo": "serve-d",
+            "rev": "v0.8.0-beta.14",
+            "sha256": "sha256-Nm8lvRwd65teK6JWSayFwjUaad1jZ3Dw7ENul/MrEUU=",
+            "type": "github"
+        },
+        "version": "v0.8.0-beta.14"
+    },
     "serve-d-bin-aarch64-darwin": {
         "cargoLocks": null,
         "date": null,

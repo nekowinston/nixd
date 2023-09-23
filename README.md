@@ -9,5 +9,6 @@
 
 [`dcd`](https://github.com/dlang-community/dcd),
 [`dfmt`](https://github.com/dlang-community/dfmt),
+[`dscanner`](https://github.com/dlang-community/d-scanner),
 and [`serve-d`](https://github.com/pure-d/serve-d)
 packaged for Nix; mostly for my own convenience.

@@ -15,8 +15,8 @@ fetch.github = "dlang-community/d-scanner"
 extract = ["dub.selections.json"]
 
 # [serve-d]
-# src.git = "https://github.com/Pure-D/serve-d"
-# fetch.github = "Pure-D/serve-d"
+# src.github_tag = "pure-d/serve-d"
+# fetch.github = "pure-d/serve-d"
 # extract = ["dub.selections.json"]
 
 [serve-d-bin-aarch64-darwin]

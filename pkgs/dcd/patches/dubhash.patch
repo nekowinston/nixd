@@ -9,35 +9,6 @@ index 57b7c42..a995488 100644
  
  sourcePaths "src"
  importPaths "src"
-diff --git a/common/dubhash.d b/common/dubhash.d
-deleted file mode 100644
-index 1c03b07..0000000
---- a/common/dubhash.d
-+++ /dev/null
-@@ -1,23 +0,0 @@
--import std.algorithm;
--import std.ascii;
--import std.conv;
--import std.exception;
--import std.file;
--import std.path;
--import std.process;
--import std.range;
--import std.string;
--
--void main()
--{
--    auto dir = environment.get("DUB_PACKAGE_DIR");
--    auto hashFile = dir.buildPath("..", "bin", "dubhash.txt");
--    auto gitVer = executeShell("git -C " ~ dir ~ " describe --tags");
--    auto ver = (gitVer.status == 0 ? gitVer.output.strip
--            : "v" ~ dir.dirName.baseName.findSplitAfter(
--                environment.get("DUB_ROOT_PACKAGE") ~ "-")[1]).ifThrown("0.0.0")
--        .chain(newline).to!string.strip;
--    dir.buildPath("..", "bin").mkdirRecurse;
--    if (!hashFile.exists || ver != hashFile.readText.strip)
--        hashFile.write(ver);
--}
 diff --git a/common/src/dcd/common/dcd_version.d b/common/src/dcd/common/dcd_version.d
 index 2d4cccb..f06c68b 100644
 --- a/common/src/dcd/common/dcd_version.d

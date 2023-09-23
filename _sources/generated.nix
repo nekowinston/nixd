@@ -35,6 +35,18 @@
     };
     "dub.selections.json" = builtins.readFile ./dscanner-v0.16.0-beta.3/dub.selections.json;
   };
+  serve-d = {
+    pname = "serve-d";
+    version = "v0.8.0-beta.14";
+    src = fetchFromGitHub {
+      owner = "pure-d";
+      repo = "serve-d";
+      rev = "v0.8.0-beta.14";
+      fetchSubmodules = false;
+      sha256 = "sha256-Nm8lvRwd65teK6JWSayFwjUaad1jZ3Dw7ENul/MrEUU=";
+    };
+    "dub.selections.json" = builtins.readFile ./serve-d-v0.8.0-beta.14/dub.selections.json;
+  };
   serve-d-bin-aarch64-darwin = {
     pname = "serve-d-bin-aarch64-darwin";
     version = "0.8.0-beta.14";

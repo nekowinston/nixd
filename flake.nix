@@ -2,7 +2,7 @@
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    dub2nix.url = "github:lionello/dub2nix";
+    dub2nix.url = "github:nekowinston/dub2nix/feat/patchable-deps";
     dub2nix.flake = false;
   };
 

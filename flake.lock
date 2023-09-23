@@ -3,15 +3,16 @@
     "dub2nix": {
       "flake": false,
       "locked": {
-        "lastModified": 1694449706,
-        "narHash": "sha256-IZc4U6DxAiMIgO5DLOC9EJyJvMdrr1OrRJo+keujfb8=",
-        "owner": "lionello",
+        "lastModified": 1695491709,
+        "narHash": "sha256-bUh+4txwUE+9BuZThdkqetFXbR3ppJNJx8ARN8ReXqo=",
+        "owner": "nekowinston",
         "repo": "dub2nix",
-        "rev": "d72adcf01c4d4351ed459e169494232a228eedb3",
+        "rev": "4702b1b5949f6e00bab13fceb8cc58c45379039f",
         "type": "github"
       },
       "original": {
-        "owner": "lionello",
+        "owner": "nekowinston",
+        "ref": "feat/patchable-deps",
         "repo": "dub2nix",
         "type": "github"
       }

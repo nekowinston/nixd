@@ -1,11 +1,9 @@
 {
-  dcompiler,
   mkDubDerivation,
   source,
 }:
 mkDubDerivation rec {
   inherit (source) pname version src;
-  inherit dcompiler;
   selections = ./dub.selections.nix;
 
   # deal with the dubhash, set the DSCANNER_VERSION enum to the nix version

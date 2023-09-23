@@ -1,13 +1,10 @@
 {
   pkgs ? import <nixpkgs> {},
   dcompiler ?
-    if pkgs.stdenv.hostPlatform.system == "aarch64-darwin"
+    if pkgs.stdenv.hostPlatform.isAarch64
     then pkgs.ldc
     else pkgs.dmd,
-  dub2nix ? (let
-    inherit (builtins.fromJSON (builtins.readFile ./flake.lock).nodes.dub2nix.locked) rev;
-  in
-    fetchTarball "https://github.com/lionello/dub2nix/archive/refs/${rev}.tar.gz"),
+  dub2nix ? (fetchTarball "https://github.com/nekowinston/dub2nix/archive/refs/heads/feat/patchable-deps.tar.gz"),
 }: let
   nvfetcher = pkgs.callPackage ./_sources/generated.nix {};
   mkDubDerivation = (import "${dub2nix}/mkDub.nix" {inherit pkgs dcompiler;}).mkDubDerivation;
@@ -20,16 +17,21 @@
   system = pkgs.stdenv.hostPlatform.system;
 in rec {
   dcd = pkgs.callPackage ./pkgs/dcd {
-    inherit dcompiler;
+    inherit mkDubDerivation;
     source = nvfetcher."dcd";
   };
 
   dfmt = mkPkg "dfmt" {};
 
-  # TODO: not quite ready yet, another dub2nix issue
-  # dscanner = pkgs.callPackage ./pkgs/dscanner {
+  dscanner = pkgs.callPackage ./pkgs/dscanner {
+    inherit mkDubDerivation;
+    source = nvfetcher."dscanner";
+  };
+
+  # TODO: fix `staticLibrary` builds with dub2nix, this depends on it
+  # serve-d = pkgs.callPackage ./pkgs/serve-d {
   #   inherit dcompiler mkDubDerivation;
-  #   source = nvfetcher."dscanner";
+  #   source = nvfetcher."serve-d";
   # };
 
   # just packaging the binary, since it can't build with dub2nix yet

@@ -19,4 +19,8 @@ stdenvNoCC.mkDerivation {
     cp serve-d $out/bin
     runHook postInstall
   '';
+
+  meta = {
+    mainProgram = "serve-d";
+  };
 }
