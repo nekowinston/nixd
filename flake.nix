@@ -25,7 +25,6 @@
           buildInputs = [
             (import inputs.dub2nix {inherit pkgs;})
             pkgs.just
-            pkgs.nvfetcher
           ];
         };
 

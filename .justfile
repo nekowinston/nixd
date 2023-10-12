@@ -2,5 +2,5 @@ default:
   @just --choose
 
 update:
-  nvfetcher
+  nix run github:berberman/nvfetcher
   ./update.sh
