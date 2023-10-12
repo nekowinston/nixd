@@ -14,6 +14,10 @@ src.github_tag = "dlang-community/d-scanner"
 fetch.github = "dlang-community/d-scanner"
 extract = ["dub.selections.json"]
 
+[dub]
+src.github_tag = "dlang/dub"
+fetch.github = "dlang/dub"
+
 # [serve-d]
 # src.github_tag = "pure-d/serve-d"
 # fetch.github = "pure-d/serve-d"

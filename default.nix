@@ -28,6 +28,8 @@ in rec {
     source = nvfetcher."dscanner";
   };
 
+  dub = pkgs.callPackage ./pkgs/dub {};
+
   # TODO: fix `staticLibrary` builds with dub2nix, this depends on it
   # serve-d = pkgs.callPackage ./pkgs/serve-d {
   #   inherit dcompiler mkDubDerivation;
